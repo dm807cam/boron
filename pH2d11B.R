@@ -90,12 +90,10 @@ pH2d11B <- function(date = "date", pH="pH", temp="temp", sal="sal", wd=0){
             pH2d11B_df$`R [B(OH)3]` <- pH2d11B_df$`R [B(OH)4-]`*aB
             pH2d11B_df$`d11B (B(OH)4-)` <- (pH2d11B_df$`R [B(OH)4-]`/R951-1)*1000
             pH2d11B_df$`d11B (B(OH)3)` <- (pH2d11B_df$`R [B(OH)3]`/R951-1)*1000  
+  
+  return(pH2d11B_df)
             }
 
-
-
-# Example using data 
-df <- read.csv(file.choose(), fileEncoding="UTF-8-BOM", sep="\t")
-
-pH2d11B(pH=df$SF_pHint_tot, temp=df$SF_thermC_corr, sal=df$SBE_sal, wd=18)
+# Example 
+pH2d11B(pH=8, temp=25, sal=35, wd=18)
 
